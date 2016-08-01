@@ -1,0 +1,34 @@
+<h2>Listing environments</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Token</th>
+      <th>Api key</th>
+      <th>Api secret</th>
+      <th>Project</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for environment <- @environments do %>
+    <tr>
+      <td><%= environment.name %></td>
+      <td><%= environment.token %></td>
+      <td><%= environment.api_key %></td>
+      <td><%= environment.api_secret %></td>
+      <td><%= environment.project_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: environment_path(@conn, :show, environment), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: environment_path(@conn, :edit, environment), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: environment_path(@conn, :delete, environment), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New environment", to: environment_path(@conn, :new) %>

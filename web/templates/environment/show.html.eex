@@ -1,0 +1,33 @@
+<h2>Show environment</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @environment.name %>
+  </li>
+
+  <li>
+    <strong>Token:</strong>
+    <%= @environment.token %>
+  </li>
+
+  <li>
+    <strong>Api key:</strong>
+    <%= @environment.api_key %>
+  </li>
+
+  <li>
+    <strong>Api secret:</strong>
+    <%= @environment.api_secret %>
+  </li>
+
+  <li>
+    <strong>Project:</strong>
+    <%= @environment.project_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: environment_path(@conn, :edit, @environment) %>
+<%= link "Back", to: environment_path(@conn, :index) %>

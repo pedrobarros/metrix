@@ -17,6 +17,10 @@ defmodule Metrix.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    resources "/companies", CompanyController
+    resources "/projects", ProjectController
+    resources "/environments", EnvironmentController
   end
 
   # Other scopes may use custom stacks.
